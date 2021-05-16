@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostCreateComponent } from './posts/post-create/post-create.component';
+import {NavbarComponent} from "./navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
