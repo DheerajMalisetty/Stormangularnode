@@ -12,13 +12,23 @@ export class LoginComponent implements OnInit {
   loginUserData: any = {}
   constructor(private _auth: AuthService) { }
 
+  isLogin:boolean = false;
   ngOnInit(): void {
   }
   loginUsers(){
     this._auth.loginUser(this.loginUserData)
       .subscribe(
-        res => console.log(res),
-        err => console.log(err)
+        data => {
+          console.log(data['username'])
+          if(data['result']==true){
+            this.isLogin = true;
+            alert("login successful");
+          }
+          else{
+            this.isLogin = false;
+            alert("login fail");
+          }
+        }
       )
   }
 }
